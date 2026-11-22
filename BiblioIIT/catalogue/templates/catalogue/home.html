@@ -1,0 +1,28 @@
+{% extends "catalogue/base.html" %}
+{% block title %}Accueil | BiblioIIT{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">BIBLIOTHÈQUE UNIVERSITAIRE</p>
+    <h1>La connaissance<br><span>à portée de main.</span></h1>
+    <p class="hero-copy">Consulte le catalogue et retrouve les informations essentielles sur les livres disponibles.</p>
+    <a class="button" href="{% url 'catalogue:books' %}">Explorer le catalogue</a>
+  </div>
+  <div class="hero-mark" aria-hidden="true">B.</div>
+</section>
+<section class="stats" aria-label="Statistiques de la bibliothèque">
+  <article class="stat-card"><span>Livres enregistrés</span><strong>{{ book_count }}</strong></article>
+  <article class="stat-card"><span>Lecteurs inscrits</span><strong>{{ member_count }}</strong></article>
+  <article class="stat-card"><span>Emprunts en cours</span><strong>{{ active_loan_count }}</strong></article>
+</section>
+<section class="section-heading"><div><p class="eyebrow">À DÉCOUVRIR</p><h2>Derniers livres ajoutés</h2></div><a class="text-link" href="{% url 'catalogue:books' %}">Tout le catalogue →</a></section>
+{% if recent_books %}
+<div class="book-grid">
+  {% for book in recent_books %}
+  <article class="book-card"><span class="book-category">{{ book.category|default:"Ouvrage" }}</span><h3>{{ book.title }}</h3><p>{{ book.author }}</p><p class="availability">{{ book.available_copies }} disponible(s)</p><a class="text-link" href="{% url 'catalogue:book_detail' book.pk %}">Voir le livre →</a></article>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty-state"><h3>Le catalogue est prêt à être rempli.</h3><p>Ajoute les premiers ouvrages depuis l'espace d'administration.</p><a class="button button-secondary" href="{% url 'admin:index' %}">Ouvrir l'administration</a></div>
+{% endif %}
+{% endblock %}

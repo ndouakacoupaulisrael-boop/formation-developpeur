@@ -1,0 +1,8 @@
+{% extends "catalogue/base.html" %}
+{% block title %}Emprunts | BiblioIIT{% endblock %}
+{% block content %}
+<div class="section-heading"><div><p class="eyebrow">SUIVI</p><h1>Emprunts</h1><p>Consulte les emprunts actifs et l'historique des retours.</p></div><a class="button" href="{% url 'catalogue:loan_create' %}">Nouvel emprunt</a></div>
+{% if loans %}<div class="table-wrap"><table><thead><tr><th>Livre</th><th>Lecteur</th><th>Emprunté le</th><th>Retour prévu</th><th>Statut</th><th>Action</th></tr></thead><tbody>
+{% for loan in loans %}<tr><td>{{ loan.book.title }}</td><td>{{ loan.member.full_name }}</td><td>{{ loan.borrowed_on|date:"d/m/Y" }}</td><td>{{ loan.due_date|date:"d/m/Y" }}</td><td>{% if loan.returned_on %}<span class="status status-done">Retourné le {{ loan.returned_on|date:"d/m/Y" }}</span>{% else %}<span class="status status-active">En cours</span>{% endif %}</td><td>{% if not loan.returned_on %}<form method="post" action="{% url 'catalogue:loan_return' loan.pk %}">{% csrf_token %}<button class="small-button" type="submit">Enregistrer le retour</button></form>{% else %}—{% endif %}</td></tr>{% endfor %}
+</tbody></table></div>{% else %}<div class="empty-state"><h2>Aucun emprunt pour le moment</h2><p>Crée d'abord un lecteur et un livre dans l'administration, puis enregistre un emprunt.</p><a class="button" href="{% url 'catalogue:loan_create' %}">Créer un emprunt</a></div>{% endif %}
+{% endblock %}

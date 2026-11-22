@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BiblioIIT — catalogue et gestion des emprunts de la bibliothèque.">
+  <title>{% block title %}BiblioIIT{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'catalogue/css/style.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{% url 'catalogue:home' %}">Biblio<span>IIT</span></a>
+    <nav aria-label="Navigation principale">
+      <a href="{% url 'catalogue:home' %}">Accueil</a>
+      <a href="{% url 'catalogue:books' %}">Catalogue</a>
+      <a href="{% url 'catalogue:loans' %}">Emprunts</a>
+      <a class="nav-admin" href="{% url 'admin:index' %}">Administration</a>
+    </nav>
+  </header>
+  <main class="container">
+    {% if messages %}
+      <div class="messages" aria-live="polite">
+        {% for message in messages %}<p class="message {{ message.tags }}">{{ message }}</p>{% endfor %}
+      </div>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">BiblioIIT · Projet académique Django</footer>
+</body>
+</html>

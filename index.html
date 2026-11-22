@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio de Kacou Paul Israel N’Doua, étudiant en informatique à l’Institut Ivoirien de Technologie.">
+  <meta name="theme-color" content="#10233f">
+  <title>Kacou Paul Israel N’Doua — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a class="brand" href="#accueil" aria-label="Accueil">KPI<span>.</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Ouvrir le menu">☰</button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#apropos">À propos</a></li><li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li><li><a href="#formation">Formation</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <section id="accueil" class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">PORTFOLIO · INFORMATIQUE · CÔTE D’IVOIRE</p>
+        <h1>Bonjour, je suis <span>Kacou Paul Israel N’Doua</span>.</h1>
+        <p class="hero-lead">Étudiant en Licence 2 Informatique à l’Institut Ivoirien de Technologie, intéressé par le développement logiciel, Python, les applications web et les systèmes intelligents.</p>
+        <div class="hero-actions"><a class="button primary" href="#projets">Découvrir mes projets</a><a class="button secondary" href="#contact">Me contacter</a></div>
+        <p class="availability">À la recherche d’occasions d’apprendre, de collaborer et de contribuer à des projets concrets.</p>
+      </div>
+      <aside class="hero-card" aria-label="Présentation rapide">
+        <div class="monogram">KPI</div><p class="card-label">ÉTUDIANT EN INFORMATIQUE</p><h2>Apprendre.<br>Construire.<br>Améliorer.</h2>
+        <p>Une approche fondée sur la rigueur, la curiosité et la progression continue.</p>
+        <a href="https://github.com/ndouakacoupaulisrael-boop" target="_blank" rel="noopener noreferrer">Voir mon GitHub ↗</a>
+      </aside>
+    </section>
+
+    <section id="apropos" class="section section-soft"><div class="container narrow">
+      <p class="eyebrow">01 — À PROPOS</p><h2 class="section-title">Construire des solutions utiles.</h2>
+      <p class="section-intro">Je suis étudiant en informatique à l’Institut Ivoirien de Technologie (IIT), à Grand-Bassam. J’aime comprendre les problèmes, organiser une solution claire et la transformer en application fonctionnelle.</p>
+      <p>Mon parcours académique m’amène à explorer le développement Python, les applications web et mobiles, les bases de données, l’algorithmique et les systèmes intelligents. Je cherche à renforcer mes compétences à travers des projets pratiques et le travail en équipe.</p>
+    </div></section>
+
+    <section id="competences" class="section container">
+      <p class="eyebrow">02 — COMPÉTENCES</p><h2 class="section-title">Outils et domaines explorés</h2>
+      <div class="skill-grid">
+        <article class="skill-card"><h3>Programmation</h3><p>Python · Dart · C# · algorithmique</p></article>
+        <article class="skill-card"><h3>Web</h3><p>HTML sémantique · CSS3 · Flexbox · Django</p></article>
+        <article class="skill-card"><h3>Applications</h3><p>Flutter · interfaces · architecture MVC</p></article>
+        <article class="skill-card"><h3>Données & outils</h3><p>SQL Server · SQLite · Git · GitHub</p></article>
+      </div>
+      <p class="small-note">Compétences présentées comme domaines pratiqués dans le cadre de la formation et des projets, et non comme certifications professionnelles.</p>
+    </section>
+
+    <section id="projets" class="section section-dark"><div class="container">
+      <p class="eyebrow">03 — PROJETS</p><h2 class="section-title">Quelques réalisations</h2>
+      <p class="section-intro">Des projets académiques et personnels qui illustrent ma progression et ma capacité à passer d’un besoin à une solution.</p>
+      <div class="project-grid">
+        <article class="project-card"><span class="project-type">Application mobile · Flutter</span><h3>Life Pressing</h3><p>Application de gestion d’un pressing avec suivi des commandes, paiements, charges et indicateurs d’activité. Une première démonstration fonctionne hors ligne.</p><ul><li>Flutter / Dart</li><li>Tests automatisés</li><li>Gestion de données</li></ul><a href="https://github.com/ndouakacoupaulisrael-boop/life-pressing" target="_blank" rel="noopener noreferrer">Voir le dépôt GitHub ↗</a></article>
+        <article class="project-card"><span class="project-type">Python · Architecture MVC</span><h3>Mini Scraper MVC</h3><p>Mini-projet de collecte et de présentation de données organisé selon une séparation en modèles, vues et contrôleurs, avec démonstration et tests.</p><ul><li>Python</li><li>Architecture MVC</li><li>Tests</li></ul><a href="https://github.com/ndouakacoupaulisrael-boop/mini-scraper-mvc" target="_blank" rel="noopener noreferrer">Voir le dépôt GitHub ↗</a></article>
+        <article class="project-card"><span class="project-type">Algorithmique · Python</span><h3>Comparateur de marché</h3><p>Comparaison de prix à partir de fichiers CSV, identification de la boutique la plus avantageuse et détection d’écarts de prix avec une alerte de 8 %.</p><ul><li>Python / CSV</li><li>Dictionnaires et complexité</li><li>Analyse algorithmique</li></ul><a href="https://github.com/ndouakacoupaulisrael-boop/comparateur-marche-algorithmique" target="_blank" rel="noopener noreferrer">Voir le dépôt GitHub ↗</a></article>
+        <article class="project-card"><span class="project-type">Base de données · C#</span><h3>Gestion Université IIT</h3><p>Projet académique de gestion universitaire réalisé avec Visual Studio et SQL Server, en mettant l’accent sur les formulaires, la navigation et la présentation.</p><ul><li>C# / Visual Studio</li><li>SQL Server</li><li>Conception d’interfaces</li></ul><span class="project-private">Démonstration académique</span></article>
+      </div>
+    </div></section>
+
+    <section id="formation" class="section container">
+      <p class="eyebrow">04 — FORMATION</p><h2 class="section-title">Parcours académique</h2>
+      <div class="timeline"><article><span>En cours</span><h3>Licence 2 Informatique</h3><p>Institut Ivoirien de Technologie (IIT) — Grand-Bassam, Côte d’Ivoire.</p></article><article><span>Validée</span><h3>Licence 1 Génie Logiciel</h3><p>Institut Ivoirien de Technologie (IIT).</p></article></div>
+      <a class="button secondary" href="cv.pdf" download>Télécharger mon CV (PDF)</a>
+    </section>
+
+    <section id="contact" class="section section-soft"><div class="container contact-layout">
+      <div><p class="eyebrow">05 — CONTACT</p><h2 class="section-title">Échangeons autour d’un projet.</h2><p>Je suis ouvert aux échanges, à l’apprentissage et aux collaborations académiques ou techniques.</p></div>
+      <div class="contact-card"><a href="https://github.com/ndouakacoupaulisrael-boop" target="_blank" rel="noopener noreferrer">GitHub ↗</a><p class="contact-placeholder">Avant publication définitive, ajouter ici une adresse e-mail, un profil LinkedIn et un numéro de téléphone professionnels.</p></div>
+    </div></section>
+  </main>
+  <footer class="footer"><div class="container"><p>© <span id="year">2026</span> Kacou Paul Israel N’Doua — Portfolio personnel</p><a href="#accueil">Retour en haut ↑</a></div></footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

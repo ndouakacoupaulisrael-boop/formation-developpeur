@@ -1,0 +1,14 @@
+{% extends "catalogue/base.html" %}
+{% block title %}{{ book.title }} | BiblioIIT{% endblock %}
+{% block content %}
+<p class="breadcrumb"><a href="{% url 'catalogue:books' %}">Catalogue</a> / {{ book.title }}</p>
+<article class="detail-card"><span class="book-category">{{ book.category|default:"Ouvrage" }}</span><h1>{{ book.title }}</h1><p class="detail-author">par {{ book.author }}</p>
+  {% if book.description %}<p class="description">{{ book.description|linebreaks }}</p>{% else %}<p class="muted">Aucune description n'a été ajoutée.</p>{% endif %}
+  <dl class="details-list">
+    {% if book.isbn %}<div><dt>ISBN</dt><dd>{{ book.isbn }}</dd></div>{% endif %}
+    {% if book.publication_year %}<div><dt>Année</dt><dd>{{ book.publication_year }}</dd></div>{% endif %}
+    <div><dt>Disponibilité</dt><dd>{{ book.available_copies }} exemplaire(s) sur {{ book.total_copies }}</dd></div>
+  </dl>
+  {% if book.available_copies > 0 %}<a class="button" href="{% url 'catalogue:loan_create' %}">Enregistrer un emprunt</a>{% else %}<p class="unavailable">Aucun exemplaire disponible actuellement.</p>{% endif %}
+</article>
+{% endblock %}
